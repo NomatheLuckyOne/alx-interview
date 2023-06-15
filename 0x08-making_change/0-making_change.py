@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Making change"""
 
+
 def makeChange(coins, total):
     """A function that returns the minimum operations"""
     if total < 0:

@@ -1,11 +1,9 @@
 #!/usr/bin/python3
 
-"""A function that returns the perimeter of the island 
-described in grid"""
+"""A function that returns the perimeter of the island described in grid"""
 
 def island_perimeter(grid):
-	""" grid is rectangular, with its width and heigth not 
-	exceeding 100 """
+	""" grid is rectangular, with its width and heigth not exceeding 100 """
 	whole_perimeter = 0
 
 	for idx, row in enumerate(grid):

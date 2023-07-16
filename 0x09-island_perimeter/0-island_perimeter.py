@@ -22,7 +22,6 @@ def island_perimeter(grid):
             if (elem_idx != len(row) - 1 and row[elem_idx + 1] == 0):
                 whole_perimeter += 1
 
-	    # right
             if (elem_idx == len(row) - 1):
                 whole_perimeter += 1
 
@@ -45,7 +44,7 @@ def island_perimeter(grid):
     return whole_perimeter
 #
 #
-#if __name__ == "__main__":
+# if __name__ == "__main__":
 #    grid = [
 #        [0, 0, 0, 0, 0, 0],
 #        [0, 1, 0, 0, 0, 0],
@@ -53,4 +52,4 @@ def island_perimeter(grid):
 #        [0, 1, 1, 1, 0, 0],
 #        [0, 0, 0, 0, 0, 0]
 #    ]
-#print(island_perimeter(grid))
+# print(island_perimeter(grid))

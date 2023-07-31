@@ -1,25 +1,20 @@
 #!/usr/bin/node
-const request = require('request');
-const API_URL = 'https://wsapi-api.bbtn.io/api';
+const util = require('util');
+const request = util.promisify(require('request'));
+const filmID = process.argv[2];
 
-if (process.argv.length > 2) {
-  request(`${API_URL}/films/${process.argv[2]}/`, (err, _, body) => {
-    if (err) {
-      console.log(err);
-    }
-    const charactersURL = JSON.parse(body).characters;
-    const charactersName = charactersURL.map(
-      url => new Promise((resolve, reject) => {
-	requst(url, (promiseErr, _, charactersReqBody) => {
-	  if (promiseErr) {
-	    reject(promiseErr);
-	  }
-	  resolve(JSON.parse(charactersReqBody).name);
-        });
-      }));
+async function starwarsCharacters (filmId) {
+  const endpoint = 'https://swapi-api.htbn.io/api/films/' + filmId;
+  let response = await (await request(endpoint)).body;
+  response = JSON.parse(response);
+  const cahracters = response.characters;
 
-    Promise.all(charactersNmae)
-      .then(Names => console.log(names.join('\n')))
-      .catch(allErr => console.log(allErr));
-   });
+  for (let i = 0; i < characters.length; i++) {
+    const urlCharacter = characters[i];
+    let character = await (await request(urlCharacter)).body;
+    character = JSON.parse(character);
+    console.log(character.name);
+  }
 }
+
+starwarsCharacters(filmID);

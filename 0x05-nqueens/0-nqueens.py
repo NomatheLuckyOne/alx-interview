@@ -6,9 +6,9 @@ import sys
 
 
 def backtrack(r, cols, pos, neg, board):
-    '''
+    """
     backtrack function that finds a solution
-    '''
+    """
     if r == n:
         res = []
         for l in range(len(board)):
@@ -36,12 +36,13 @@ def backtrack(r, cols, pos, neg, board):
 
 
     def nqueens(n):
-        '''Nqueen problems solutions
+        """Nqueen problems solutions
             Args:
                 n (int) number of queens, Must be -> 4
             Return:
                 List of lists representing coordinatesof each queen for
-                all possible solutions'''
+                all possible solutions
+        """
         cols = set()
         pos_diag = set()
         neg_diag = set()
